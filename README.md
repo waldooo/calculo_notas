@@ -1,4 +1,4 @@
-# Conversão de notas
+# Conversão de notas ( PT-BR )
 
 Conversão de notas de 0 a 100 para valores 0 a 5 definidos dentro de intervalos:
 
