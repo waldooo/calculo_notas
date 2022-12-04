@@ -60,25 +60,53 @@ def funcao_convercao(self):
 
 
 janela = Tk()
-janela.title("conversor de notas v.2022.0.a")
+janela.title("conversor v.2022")
+#janela.geometry('600x800')
 
-texto1 = Label(janela, text="Não usar vírgulas, digite números inteiros de 0 a 100:")
+texto1 = Label(janela, text="Digite números inteiros de 0 a 100:")
 texto1.grid(column=0, row=0, padx=10, pady=10)
 texto1.config(font=('helvetica', 12))
 
 
-entrada = Entry(janela)
+entrada = Entry(janela, width=3)
 entrada.grid(column=0, row=1, padx=10, pady=10)
 entrada.config(font=('helvetica', 24, 'bold'))
 
 # Bind the Enter Key to the window
 entrada.bind('<Return>', funcao_convercao)
 
-# botao = Button(janela, text="calcular", command=funcao_convercao, bg='black', fg='white', font=('helvetica', 9, 'bold'))
-# botao.grid(column=1, row=1, padx=10, pady=10)
-
 texto_nota = Label(janela, text="__")
-texto_nota.grid(column=1, row=1, padx=10, pady=10)
+texto_nota.grid(column=0, row=2, padx=10, pady=10)
 texto_nota.config(font=('helvetica', 24, 'bold'))
+
+
+message ='''Critério de conversão:
+
+abaixo de 5:        0,5
+acima de 5 até 10:  1,0
+acima de 10 até 15: 1,5
+acima de 15 até 20: 2,0
+acima de 20 até 30: 2,5
+acima de 30 até 40: 3,0
+acima de 40 até 50: 3,5
+acima de 50 até 65: 4,0
+acima de 65 até 75: 4,5
+acima de 75:        5,0 
+
+Digitar apenas números inteiros
+não utilizar ponto ou vírgula
+
+Desenvolvido em Python por:
+Waldo Costa
+waldocosta.com.br'''
+
+text_box = Text(
+    janela,
+    height=19,
+    width=32
+)
+text_box.grid(column=0, row=3, padx=10, pady=10)
+text_box.insert('end', message)
+text_box.config(state='disabled')
 
 janela.mainloop()
