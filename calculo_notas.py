@@ -1,7 +1,10 @@
+# Importa tudo da biblioteca tkinter, necessária para a interface gráfica (IG).
 from tkinter import *
 
+# O comando print envia a mensagem para o terminal, não é visualizado na IG.
 print("Não usar vírgulas, digite números inteiros de 0 a 100.")
 
+# Faixas com os valores que definem os máximos e mínimos nos intervalos.
 faixa1 = 5
 faixa2 = 10
 faixa3 = 15
@@ -15,7 +18,6 @@ maximo = 100
 
 
 def funcao_convercao(self):
-    # number = input("Digitar a nota 0 a 100: ")
     x1 = entrada.get()
     number = int(x1)
 
@@ -61,7 +63,7 @@ def funcao_convercao(self):
 
 janela = Tk()
 janela.title("conversor v.2022")
-#janela.geometry('600x800')
+
 
 texto1 = Label(janela, text="Digite números inteiros de 0 a 100:")
 texto1.grid(column=0, row=0, padx=10, pady=10)
@@ -72,7 +74,7 @@ entrada = Entry(janela, width=3)
 entrada.grid(column=0, row=1, padx=10, pady=10)
 entrada.config(font=('helvetica', 24, 'bold'))
 
-# Bind the Enter Key to the window
+# Habilita o uso da tecla ENTER para atribuição do valor
 entrada.bind('<Return>', funcao_convercao)
 
 texto_nota = Label(janela, text="__")
@@ -80,25 +82,25 @@ texto_nota.grid(column=0, row=2, padx=10, pady=10)
 texto_nota.config(font=('helvetica', 24, 'bold'))
 
 
-message ='''Critério de conversão:
-
-abaixo de 5:        0,5
-acima de 5 até 10:  1,0
-acima de 10 até 15: 1,5
-acima de 15 até 20: 2,0
-acima de 20 até 30: 2,5
-acima de 30 até 40: 3,0
-acima de 40 até 50: 3,5
-acima de 50 até 65: 4,0
-acima de 65 até 75: 4,5
-acima de 75:        5,0 
-
-Digitar apenas números inteiros
-não utilizar ponto ou vírgula
-
-Desenvolvido em Python por:
-Waldo Costa
-waldocosta.com.br'''
+message = ('Critério de conversão:\n'
+           '\n'
+           'abaixo de 5:        0,5\n'
+           'acima de 5 até 10:  1,0\n'
+           'acima de 10 até 15: 1,5\n'
+           'acima de 15 até 20: 2,0\n'
+           'acima de 20 até 30: 2,5\n'
+           'acima de 30 até 40: 3,0\n'
+           'acima de 40 até 50: 3,5\n'
+           'acima de 50 até 65: 4,0\n'
+           'acima de 65 até 75: 4,5\n'
+           'acima de 75:        5,0 \n'
+           '\n'
+           'Digitar apenas números inteiros\n'
+           'não utilizar ponto ou vírgula\n'
+           '\n'
+           'Desenvolvido em Python por:\n'
+           'Waldo Costa\n'
+           'waldocosta.com.br')
 
 text_box = Text(
     janela,
